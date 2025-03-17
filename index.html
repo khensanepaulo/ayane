@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Ayane 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(1350deg, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .menu {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(255, 105, 135, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        .menu a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            color: white;
+            display: block;
+            transition: 0.3s;
+        }
+        .menu a:hover { background: #ff477e; }
+        .menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 2em;
+            cursor: pointer;
+        }
+        .open-btn {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 1.5em;
+            cursor: pointer;
+            background: none;
+            border: none;
+            color: white;
+        }
+        .container { padding: 50px; }
+    </style>
+</head>
+<body>
+    <button class="open-btn" onclick="openMenu()">☰</button>
+    
+    <div id="menu" class="menu">
+        <span class="close-btn" onclick="closeMenu()">×</span>
+        <a href="index.html">Início</a>
+        <a href="pages/comeco.html">O Começo</a>
+        <a href="pages/album.html">Fotos</a>
+    </div>
+    
+    <div class="container">
+        <h1>Bem-vinda, Ayane 💖</h1>
+        <button onclick="openModal()" style="background: #ff6f91; padding: 10px 20px; border: none; border-radius: 25px; color: white; font-size: 1em; cursor: pointer; transition: all 0.3s ease;">Abrir Mensagem Especial</button>
+    </div>
+    
+    <footer style="position: absolute; bottom: 10px; width: 100%; text-align: center; color: white; font-size: 1.2em;">
+        Com carinho de Khensane para Ayane 💕
+    </footer>
+    
+    <div id="modal" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 105, 135, 0.9); padding: 20px; border-radius: 10px; color: white; font-size: 1.2em; text-align: center; width: 80%; max-width: 400px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <p>Sempre que duvidares, abre esta página para lembrares o quanto te amo 💖</p>
+        <button onclick="closeModal()" style="margin-top: 10px; padding: 10px 20px; border: none; border-radius: 5px; background: #ff477e; color: white; font-size: 1em; cursor: pointer;">Fechar</button>
+    </div>
+    
+    <script>
+        function openMenu() { document.getElementById("menu").style.width = "250px"; }
+        function closeMenu() { document.getElementById("menu").style.width = "0"; }
+        function openModal() { document.getElementById("modal").style.display = "block"; }
+        function closeModal() { document.getElementById("modal").style.display = "none"; }
+    </script>
+</body>
+</html>

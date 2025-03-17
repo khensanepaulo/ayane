@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Começo - Para Ayane 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(1350deg, #ff9a9e, #fad0c4);
+            color: white;
+            text-align: center;
+        }
+        .container {
+            padding: 50px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+        #counter {
+            font-size: 1.5em;
+            font-weight: bold;
+            background: rgba(255, 105, 135, 0.9);
+            display: inline-block;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            background: #ff6f91;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-size: 1em;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            background: #ff477e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>O começo de nossa história 💖</h1>
+        <p>Estamos juntos há:</p>
+        <div id="counter">Calculando...</div>
+        <br>
+        <a href="../index.html">Voltar para o início</a>
+    </div>
+
+    <script>
+        function updateCounter() {
+            const startDate = new Date("March 4, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+            const timeDifference = now - startDate;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById("counter").innerHTML = `${days} dias, ${hours} horas, ${minutes} minutos e ${seconds} segundos`;
+        }
+
+        setInterval(updateCounter, 1000);
+        updateCounter();
+    </script>
+</body>
+</html>
